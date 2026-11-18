@@ -10,7 +10,7 @@ use craft\db\Connection;
 use craft\helpers\App;
 
 return [
-    'driver' => Connection::DRIVER_PGSQL,
+    'driver' => App::env('CRAFT_DB_DRIVER') ?: Connection::DRIVER_MYSQL,
     'server' => App::env('CRAFT_DB_SERVER'),
     'user' => App::env('CRAFT_DB_USER'),
     'password' => App::env('CRAFT_DB_PASSWORD'),
